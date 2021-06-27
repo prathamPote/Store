@@ -12,6 +12,10 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -42,11 +46,32 @@ public class LoginController implements Initializable {
         if (UserNameTxt.getText().isBlank() == true && PassTxt.getText().isBlank() == true) {
             MessageLbl.setText("Invalid Credentials");
         } else {
-                validateLogin();
+            validateLogin();
         }
     }
-    public void validateLogin()
-    {
+
+    public void validateLogin() {
+
+        String verifyLogin = "SELECT count(1) from Login where username = '" + UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
+        try {
+            DatabaseConnection con = new DatabaseConnection();
+            Connection conDb = con.getConnection();
+            Statement statement = conDb.createStatement();
+            ResultSet query = statement.executeQuery(verifyLogin);
+            while (query.next())
+            {
+                if (query.getInt(1)==1)
+                {
+                    MessageLbl.setText("Login SuccessFull");
+                }
+                else {
+                    MessageLbl.setText("Invalid Credentials!");
+                }
+            }
+        } catch (Exception throwables) {
+            throwables.printStackTrace();
+        }
+
 
     }
 
