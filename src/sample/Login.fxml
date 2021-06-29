@@ -25,24 +25,24 @@
                   <Image url="@../../images/lock-2752132-2284949.png" />
                </image>
             </ImageView>
-            <Label layoutX="39.0" layoutY="132.0" text="Username">
+            <Label layoutX="39.0" layoutY="132.0" prefHeight="19.0" prefWidth="52.0" text="Email Id">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="UserNameTxt" layoutX="159.0" layoutY="129.0" promptText="Enter Your Username" />
+            <TextField fx:id="UserNameTxt" layoutX="159.0" layoutY="129.0" promptText="Enter Your Email Id" style="-fx-background-radius: 20;" />
             <Label layoutX="39.0" layoutY="190.0" text="Password">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <PasswordField fx:id="PassTxt" layoutX="159.0" layoutY="187.0" promptText="Enter Your Password" />
-            <Button fx:id="LoginBtn" layoutX="45.0" layoutY="245.0" mnemonicParsing="false" onAction="#setLoginBtn" prefHeight="30.0" prefWidth="266.0" style="-fx-background-color: #E798AE;" text="Login">
+            <PasswordField fx:id="PassTxt" layoutX="159.0" layoutY="187.0" promptText="Enter Your Password" style="-fx-background-radius: 320;" />
+            <Button fx:id="LoginBtn" layoutX="45.0" layoutY="245.0" mnemonicParsing="false" onAction="#setLoginBtn" prefHeight="30.0" prefWidth="266.0" style="-fx-background-color: #E798AE; -fx-background-radius: 30;" text="Login">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="RegisterBtn" layoutX="45.0" layoutY="305.0" mnemonicParsing="false" onAction="#setRegisterBtn" prefHeight="30.0" prefWidth="266.0" style="-fx-background-color: #E798AE;" text="Register">
+            <Button fx:id="RegisterBtn" layoutX="45.0" layoutY="305.0" mnemonicParsing="false" onAction="#setRegisterBtn" prefHeight="30.0" prefWidth="266.0" style="-fx-background-color: #E798AE; -fx-background-radius: 30;" text="Register">
                <font>
                   <Font size="13.0" />
                </font>

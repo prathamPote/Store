@@ -1,0 +1,10 @@
+.buttonstyle{
+            -fx-background-color:#828282
+            -fx-background-radius:30;
+            }
+        .transparent{
+        -fx-background-color: rgba(0,0,0,0);
+        }
+        .shadow{
+        -fx-effect: dropShadow(three-pass-box(0,0,0,1),10.0,0.0,10.0);
+        }

@@ -2,13 +2,17 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
@@ -16,6 +20,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -52,7 +57,7 @@ public class LoginController implements Initializable {
 
     public void validateLogin() {
 
-        String verifyLogin = "SELECT count(1) from Login where username = '" + UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
+        String verifyLogin = "SELECT count(1) from consumer where emailid = '"+UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
         try {
             DatabaseConnection con = new DatabaseConnection();
             Connection conDb = con.getConnection();
@@ -72,11 +77,16 @@ public class LoginController implements Initializable {
             throwables.printStackTrace();
         }
 
-
     }
 
-    public void setRegisterBtn(ActionEvent event) {
+    public void setRegisterBtn(ActionEvent event) throws Exception {
         Stage stage = (Stage) RegisterBtn.getScene().getWindow();
         stage.close();
+        Stage registerStage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Register.fxml")));
+        registerStage.setTitle("Electronic Fellows");
+        registerStage.initStyle(StageStyle.TRANSPARENT);
+        registerStage.setScene(new Scene(root, 600, 400));
+        registerStage.show();
     }
 }
