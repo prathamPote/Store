@@ -47,11 +47,20 @@ public class LoginController implements Initializable {
 
     }
 
-    public void setLoginBtn(ActionEvent event) {
+    public void setLoginBtn(ActionEvent event)throws Exception {
         if (UserNameTxt.getText().isBlank() == true && PassTxt.getText().isBlank() == true) {
             MessageLbl.setText("Invalid Credentials");
         } else {
             validateLogin();
+            Stage stage = (Stage) LoginBtn.getScene().getWindow();
+            stage.close();
+            Stage StoreStage = new Stage();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Store.fxml")));
+            StoreStage.setTitle("Electronic Fellows");
+            StoreStage.initStyle(StageStyle.TRANSPARENT);
+            StoreStage.setScene(new Scene(root, 600, 400));
+            StoreStage.show();
+
         }
     }
 

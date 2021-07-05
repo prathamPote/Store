@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="237.0" style="-fx-background-color: #4A1C40;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="241.0" style="-fx-background-color: #4A1C40;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="brandingImageView" blendMode="EXCLUSION" fitHeight="233.0" fitWidth="204.0" layoutX="17.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -18,7 +18,7 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="400.0" prefWidth="365.0" style="-fx-background-color: #F6E5E9;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="471.0" prefWidth="358.0" style="-fx-background-color: #F6E5E9;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="lockImageView" fitHeight="39.0" fitWidth="45.0" layoutX="159.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
                <image>

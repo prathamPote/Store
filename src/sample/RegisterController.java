@@ -35,7 +35,7 @@ public class RegisterController implements Initializable
             Image UserImg = new Image(UserImgFile.toURI().toString());
             UserImageView.setImage(UserImg);
         }
-        public  void setRegisterBtnOnAction(ActionEvent event)
+        public  void setRegisterBtnOnAction(ActionEvent event)throws Exception
         {
             String name = NameTxt.getText();
             String email = EmailTxt.getText();
@@ -56,6 +56,14 @@ public class RegisterController implements Initializable
                     {
                         FinalMsgsLbl.setText("Check your passwords");
                     }
+                Stage stage = (Stage) RegisterBtn.getScene().getWindow();
+                stage.close();
+                Stage Login = new Stage();
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login.fxml")));
+                Login.setTitle("Electronic Fellows");
+                Login.initStyle(StageStyle.TRANSPARENT);
+                Login.setScene(new Scene(root, 600, 400));
+                Login.show();
             }
         }
         public Boolean RegisterUser() {
@@ -65,7 +73,7 @@ public class RegisterController implements Initializable
             String pass1 = Pass1Txt.getText();
             String pass2 = Pass2Txt.getText();
             if (pass1.compareTo(pass2) == 0) {
-                String registerUser = "Insert into consumer values (" + ThreadLocalRandom.current().nextInt() + ",'" + name + "'," + phone + ",'" + email + "','" + pass1 + "', 0)";
+                String registerUser = "Insert into consumer values (" + ThreadLocalRandom.current().nextInt() + ",'" + name + "'," + phone + ",'" + email + "','" + pass1 + "')";
                 try {
                     DatabaseConnection con = new DatabaseConnection();
                     Connection conDb = con.getConnection();

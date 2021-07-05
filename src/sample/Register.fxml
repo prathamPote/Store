@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -40,7 +41,6 @@
                </font></Label>
             <TextField fx:id="NameTxt" layoutX="302.0" layoutY="47.0" style="-fx-background-radius: 20;" />
             <TextField fx:id="EmailTxt" layoutX="302.0" layoutY="81.0" style="-fx-background-radius: 20;" />
-            <PasswordField fx:id="PhoneTxt" layoutX="302.0" layoutY="122.0" style="-fx-background-radius: 20;" />
             <PasswordField fx:id="Pass2Txt" layoutX="300.0" layoutY="216.0" onInputMethodTextChanged="#checkPassOnAction" onKeyPressed="#checkPassOnAction" onKeyReleased="#checkPassOnAction" onKeyTyped="#checkPassOnAction" style="-fx-background-radius: 20;" />
             <Label fx:id="passwordMsgLbl" alignment="CENTER" layoutX="261.0" layoutY="196.0" prefHeight="19.0" prefWidth="226.0" textFill="#e20909">
                <font>
@@ -63,6 +63,7 @@
                </font>
             </Button>
             <Label fx:id="FinalMsgsLbl" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefHeight="18.0" prefWidth="363.0" textFill="#f20808" />
+            <TextField fx:id="PhoneTxt" layoutX="300.0" layoutY="122.0" style="-fx-background-radius: 20;" />
          </children></AnchorPane>
    </bottom>
 </BorderPane>

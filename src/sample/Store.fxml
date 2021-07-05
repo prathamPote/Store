@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="484.0" prefWidth="287.0" style="-fx-background-color: #F6E5E9;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="7.0" layoutY="23.0" prefHeight="45.0" prefWidth="273.0" stylesheets="@stylesheet.css">
+               <children>
+                  <TextField prefHeight="26.0" prefWidth="153.0" promptText="Type to search" styleClass="transparent" stylesheets="@stylesheet.css" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Search" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+               </children>
+               <styleClass>
+                  <String fx:value="search-box" />
+                  <String fx:value="shadow" />
+               </styleClass></HBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
