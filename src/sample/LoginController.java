@@ -22,7 +22,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.ResourceBundle;
-//madura commit
 public class LoginController implements Initializable {
     @FXML
     private Button RegisterBtn;
@@ -44,27 +43,29 @@ public class LoginController implements Initializable {
         Image brandingimage = new Image(branding.toURI().toString());
         brandingImageView.setImage(brandingimage);
 
-
     }
 
     public void setLoginBtn(ActionEvent event)throws Exception {
         if (UserNameTxt.getText().isBlank() == true && PassTxt.getText().isBlank() == true) {
             MessageLbl.setText("Invalid Credentials");
         } else {
-            validateLogin();
-            Stage stage = (Stage) LoginBtn.getScene().getWindow();
-            stage.close();
-            Stage StoreStage = new Stage();
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Store.fxml")));
-            StoreStage.setTitle("Electronic Fellows");
-            StoreStage.initStyle(StageStyle.TRANSPARENT);
-            StoreStage.setScene(new Scene(root, 600, 400));
-            StoreStage.show();
+            if(validateLogin())
+            {
+                Stage stage = (Stage) LoginBtn.getScene().getWindow();
+                stage.close();
+                Stage StoreStage = new Stage();
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Store.fxml")));
+                StoreStage.setTitle("Electronic Fellows");
+                StoreStage.initStyle(StageStyle.DECORATED);
+                StoreStage.setScene(new Scene(root, 1164, 636));
+                StoreStage.show();
+            }
+
 
         }
     }
 
-    public void validateLogin() {
+    public boolean validateLogin() {
 
         String verifyLogin = "SELECT count(1) from consumer where emailid = '"+UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
         try {
@@ -77,14 +78,17 @@ public class LoginController implements Initializable {
                 if (query.getInt(1)==1)
                 {
                     MessageLbl.setText("Login SuccessFull");
+                    return true;
                 }
                 else {
                     MessageLbl.setText("Invalid Credentials!");
+                    return false;
                 }
             }
         } catch (Exception throwables) {
             throwables.printStackTrace();
         }
+        return false;
 
     }
 

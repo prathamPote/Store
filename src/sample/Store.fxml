@@ -1,27 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <AnchorPane prefHeight="484.0" prefWidth="287.0" style="-fx-background-color: #F6E5E9;" BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER" layoutX="7.0" layoutY="23.0" prefHeight="45.0" prefWidth="273.0" stylesheets="@stylesheet.css">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="1164.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StoreController">
+   <children>
+      <BorderPane layoutX="-1.0" layoutY="-2.0" prefHeight="636.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="636.0" prefWidth="401.0" style="-fx-background-color: #F6E5E9;" BorderPane.alignment="CENTER">
                <children>
-                  <TextField prefHeight="26.0" prefWidth="153.0" promptText="Type to search" styleClass="transparent" stylesheets="@stylesheet.css" />
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="60.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Search" textFill="WHITE">
-                     <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                  <HBox alignment="CENTER" prefHeight="75.0" prefWidth="378.0" style="-fx-background-color: #F6E5E9;">
+                     <children>
+                        <Label contentDisplay="CENTER" prefHeight="36.0" prefWidth="204.0" text="Electronic Fellows">
+                           <font>
+                              <Font name="System Italic" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="387.0" stylesheets="@stylesheet.css">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="194.0" promptText="Type here to search" styleClass="transparent" stylesheets="@stylesheet.css" />
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Search" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="search-box" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </HBox>
+                  <Pane prefHeight="33.0" prefWidth="406.0" VBox.vgrow="ALWAYS" />
+                  <VBox fx:id="ChoseItemCard" prefHeight="488.0" prefWidth="385.0" stylesheets="@stylesheet.css">
+                     <VBox.margin>
+                        <Insets bottom="40.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label fx:id="SelectedItemName" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="381.0" text="IPhone 12" textFill="#393030">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="SelectedItemPrice" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="157.0" layoutY="10.0" prefHeight="18.0" prefWidth="369.0" text="Rs 1,20,000" textFill="#3e3939">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <ImageView fx:id="SelectedItemImage" fitHeight="232.0" fitWidth="205.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/ProductImages/iphone-12-blue-select-2020.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="80.0" top="20.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Separator opacity="0.0" prefHeight="14.0" prefWidth="353.0" />
+                        <VBox prefHeight="134.0" prefWidth="360.0" stylesheets="@stylesheet.css">
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="45.0" prefWidth="361.0">
+                                 <children>
+                                    <Label prefHeight="43.0" prefWidth="68.0" text="Quantity" textFill="#f8dbdb">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator opacity="0.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="114.0" />
+                                    <ComboBox prefHeight="36.0" prefWidth="73.0" promptText="1" styleClass="comboBox" stylesheets="@stylesheet.css" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="346.0">
+                                 <children>
+                                    <Button fx:id="AddToCartBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Add to cart" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="chosen-fruit-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </VBox>
                </children>
-               <styleClass>
-                  <String fx:value="search-box" />
-                  <String fx:value="shadow" />
-               </styleClass></HBox>
-         </children>
-      </AnchorPane>
-   </left>
-</BorderPane>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="76.0" prefWidth="762.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="438.0" text="Our Inventory">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="78.0" prefWidth="512.0" />
+                        <ImageView fx:id="MyAccountImageView" blendMode="MULTIPLY" fitHeight="68.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/accountincon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="CartImageView" fitHeight="76.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../images/cart.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="50.0" layoutY="88.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="762.0" stylesheets="@stylesheet.css">
+                     <children>
+                        <HBox prefHeight="90.0" prefWidth="239.0" styleClass="free-delivery-card" stylesheets="@stylesheet.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="90.0" prefWidth="111.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Free Delivery">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="110.0" text="For all products">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children></VBox>
+                              <ImageView fx:id="shippingImageView" fitHeight="88.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/shipment.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></ImageView>
+                              <Pane prefHeight="200.0" prefWidth="0.0" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <Pane prefHeight="90.0" prefWidth="142.0" />
+                        <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="232.0" styleClass="shopping-online-card" stylesheets="@stylesheet.css">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="90.0" prefWidth="166.0">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="85.0" text="Shop Online">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="157.0" text="Get personalized Results">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ImageView fx:id="shopOnlineView" fitHeight="59.0" fitWidth="60.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/shop.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children></HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scrollpane" prefHeight="462.0" prefWidth="718.0" styleClass="transparent" stylesheets="@stylesheet.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                           <content>
+                              <GridPane fx:id="gridpane" prefHeight="16.0" prefWidth="14.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
+                                 <padding>
+                                    <Insets left="20.0" top="20.0" />
+                                 </padding>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center></BorderPane>
+   </children>
+</AnchorPane>
