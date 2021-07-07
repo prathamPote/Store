@@ -17,7 +17,7 @@ public class ItemController {
 
     public void setData(Product product)
     {
-        this.product= product;
+         this.product=product;
         NameLabel.setText(product.getName());
         PriceLabel.setText(Currency+ product.getPrice());
         File imageFile = new File("images/ProductImages/iphone-12-blue-select-2020.png");

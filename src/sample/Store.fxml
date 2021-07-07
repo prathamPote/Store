@@ -72,7 +72,11 @@
                                        </font>
                                     </Label>
                                     <Separator opacity="0.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="114.0" />
-                                    <ComboBox prefHeight="36.0" prefWidth="73.0" promptText="1" styleClass="comboBox" stylesheets="@stylesheet.css" />
+                                    <ComboBox prefHeight="36.0" prefWidth="73.0" promptText="1" stylesheets="@stylesheet.css">
+                                       <styleClass>
+                                          <String fx:value="comboBox" />
+                                          <String fx:value="transparent" />
+                                       </styleClass></ComboBox>
                                  </children>
                               </HBox>
                               <HBox alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="346.0">
@@ -114,8 +118,23 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox layoutX="50.0" layoutY="88.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="762.0" stylesheets="@stylesheet.css">
+                  <HBox layoutX="50.0" layoutY="88.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="75.0" prefWidth="762.0" styleClass="transparent" stylesheets="@stylesheet.css">
                      <children>
+                        <HBox alignment="CENTER" prefHeight="88.0" prefWidth="229.0" styleClass="shopping-online-card" stylesheets="@stylesheet.css">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="92.0" text="Category:">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="CategoryComboBox" onAction="#OnComboBoxAction" prefHeight="30.0" prefWidth="129.0" promptText="Select Category" stylesheets="@stylesheet.css">
+                                 <styleClass>
+                                    <String fx:value="comboBox" />
+                                    <String fx:value="transparent" />
+                                 </styleClass>
+                              </ComboBox>
+                           </children>
+                        </HBox>
                         <HBox prefHeight="90.0" prefWidth="239.0" styleClass="free-delivery-card" stylesheets="@stylesheet.css">
                            <children>
                               <VBox alignment="CENTER" prefHeight="90.0" prefWidth="111.0">
@@ -144,7 +163,6 @@
                               <Insets left="50.0" />
                            </HBox.margin>
                         </HBox>
-                        <Pane prefHeight="90.0" prefWidth="142.0" />
                         <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="90.0" prefWidth="232.0" styleClass="shopping-online-card" stylesheets="@stylesheet.css">
                            <children>
                               <VBox alignment="CENTER" prefHeight="90.0" prefWidth="166.0">
@@ -182,15 +200,10 @@
                               <Insets left="20.0" top="10.0" />
                            </HBox.margin>
                            <content>
-                              <GridPane fx:id="gridpane" prefHeight="16.0" prefWidth="14.0">
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
-                                 </rowConstraints>
-                                 <padding>
-                                    <Insets left="20.0" top="20.0" />
-                                 </padding>
+                              <GridPane fx:id="gridpane" prefHeight="11.0" prefWidth="0.0">
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
                               </GridPane>
                            </content>
                         </ScrollPane>
