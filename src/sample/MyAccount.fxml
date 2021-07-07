@@ -156,7 +156,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="324.0" />
+                        <TextField prefHeight="26.0" prefWidth="315.0" />
                      </children>
                   </HBox>
                   <HBox prefHeight="35.0" prefWidth="442.0">
@@ -166,7 +166,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="46.0" prefWidth="315.0" />
+                        <TextField prefHeight="30.0" prefWidth="315.0" />
                      </children></HBox>
                </children>
             </VBox>
@@ -192,7 +192,7 @@
                                           <Font size="17.0" />
                                        </font>
                                     </Label>
-                                    <TextField prefHeight="26.0" prefWidth="303.0" />
+                                    <TextField prefHeight="26.0" prefWidth="323.0" />
                                  </children></HBox>
                            </children>
                         </VBox>
@@ -205,7 +205,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="70.0" prefWidth="307.0" />
+                        <TextField prefHeight="27.0" prefWidth="321.0" />
                      </children>
                   </HBox>
                </children>
