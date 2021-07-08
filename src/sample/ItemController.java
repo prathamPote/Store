@@ -1,27 +1,32 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 import java.io.File;
 
 public class ItemController {
     @FXML
-    private Label NameLabel,PriceLabel;
-    @FXML
-    private ImageView ItemImage;
-    private Product product;
-    public static final String Currency = "Rs.";
+    private ImageView shippingImageView, shopOnlineView, SelectedItemImage, MyAccountImageView, CartImageView;
 
-    public void setData(Product product)
-    {
-         this.product=product;
-        NameLabel.setText(product.getName());
-        PriceLabel.setText(Currency+ product.getPrice());
-        File imageFile = new File("images/ProductImages/iphone-12-blue-select-2020.png");
-        Image image = new Image(imageFile.toURI().toString());
-        ItemImage.setImage(image);
+    @FXML
+    private Label SelectedItemName,SelectedItemPrice;
+    @FXML
+    private Button AddToCartBtn;
+    @FXML
+    private VBox ChoseItemCard;
+    @FXML
+    private ScrollPane scrollPane;
+    @FXML
+    private GridPane gridpane;
+    @FXML
+    private ComboBox CategoryComboBox;
     }
 }
