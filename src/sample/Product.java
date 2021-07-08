@@ -22,7 +22,7 @@ public class Product
         this.imgsrc = imgsrc;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
