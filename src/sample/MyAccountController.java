@@ -26,7 +26,7 @@ public class MyAccountController implements Initializable {
     @FXML
     private ImageView ProfileImage,MyOrdersImage, MyAccountImageView, PasswordImage,PrivacyPolicyImage;
     @FXML
-    private Label ProfileLabel,MyOrdersLabel,PasswordLabel,PrivacyPolicyLabel,NameLabel,DateofBirthLabel,PhoneLabel,EmailLabel,ProfileSettingsLabel,ProfileDetailsLabel,ContactInfoLabel;
+    private Label ProfileLabel,MyOrdersLabel,PasswordLabel,PrivacyPolicyLabel,NameLabel,DateofBirthLabel,PhoneLabel,EmailLabel,ProfileSettingsLabel,ProfileDetailsLabel,ContactInfoLabel,FinalMsgsLbl;
     @FXML
     private Button EditProfileButton,SaveChangesButton;
     @FXML
@@ -70,7 +70,7 @@ public class MyAccountController implements Initializable {
             {
                 FinalMsgsLbl.setText("No Changes Done");
             }
-            Stage stage = (Stage) SaveChangesBtn.getScene().getWindow();
+            Stage stage = (Stage) SaveChangesButton.getScene().getWindow();
             stage.close();
             Stage MyAccount = new Stage();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MyAccount.fxml")));
@@ -85,18 +85,20 @@ public class MyAccountController implements Initializable {
         String DOB = DOBTxt.getText();
         String phone = PhoneTxt.getText();
         String Email = EmailTxt.getText();
+        String registerUser = "update consumer set (" + ThreadLocalRandom.current().nextInt() + ",'" + name + "'," + DOB + ",'" +"'," + phone + ",'" + Email + "')"+ " where CID=+";
         if(name.isBlank() != true || DOB.isBlank() !=true|| phone.isBlank() !=true||Email.isBlank() !=true)
-            String registerUser = "update consumer set (" + ThreadLocalRandom.current().nextInt() + ",'" + name + "'," + DOB + ",'" +"'," + phone + ",'" + email + "')"where CID=" ";
+        {
             try {
                 DatabaseConnection con = new DatabaseConnection();
                 Connection conDb = con.getConnection();
                 Statement statement = conDb.createStatement();
-                ResultSet query = statement.executeQuery(AccountHolder);
+                ResultSet query = statement.executeQuery(registerUser);
                 while (query.next()) {
                     statement.executeQuery("commit");
                     return true;
                 }
-            } catch (Exception exception) {
+            }
+            catch (Exception exception) {
                 exception.printStackTrace();
             }
         }
@@ -105,5 +107,5 @@ public class MyAccountController implements Initializable {
     public void setEditProfileBtnOnAction(ActionEvent event)throws Exception
     {
 
-}
     }
+}
