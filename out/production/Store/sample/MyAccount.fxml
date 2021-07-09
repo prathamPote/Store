@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="828.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="828.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MyAccountController">
    <left>
       <VBox alignment="BASELINE_RIGHT" prefHeight="530.0" prefWidth="286.0" spacing="10.0" style="-fx-background-color: #F6E5E9;" stylesheets="@stylesheet.css" BorderPane.alignment="CENTER">
          <children>
@@ -196,7 +196,7 @@
             </VBox>
             <HBox alignment="BASELINE_CENTER" prefHeight="41.0" prefWidth="442.0">
                <children>
-                  <Button fx:id="SaveChangesButton" mnemonicParsing="false" style="-fx-background-color: F6C6EA;" styleClass="search-button" stylesheets="@stylesheet.css" text="Save Changes">
+                  <Button fx:id="SaveChangesButton" mnemonicParsing="false" onAction="#setSaveChangesBtnOnAction" style="-fx-background-color: F6C6EA;" styleClass="search-button" stylesheets="@stylesheet.css" text="Save Changes">
                      <font>
                         <Font size="17.0" />
                      </font>
