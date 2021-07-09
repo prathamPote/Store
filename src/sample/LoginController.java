@@ -67,7 +67,7 @@ public class LoginController implements Initializable {
 
     public boolean validateLogin() {
 
-        String verifyLogin = "SELECT count(1) from consumer1 where emailid = '"+UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
+        String verifyLogin = "SELECT count(1) from consumer where emailid = '"+UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
         try {
             DatabaseConnection con = new DatabaseConnection();
             Connection conDb = con.getConnection();
