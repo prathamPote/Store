@@ -24,7 +24,7 @@
             </HBox>
             <ImageView fx:id="ItemImage" fitHeight="161.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/ProductImages/Mobile%20Phones/1.png" />
+                  <Image url="@../../images/ProductImages/Mobile Phones/1.png" />
                </image></ImageView>
          </children>
       </VBox>

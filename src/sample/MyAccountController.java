@@ -51,7 +51,9 @@ public class MyAccountController implements Initializable {
         File privacyfile = new File("images/download (1).png");
         Image PrivacyImage = new Image(privacyfile.toURI().toString());
         PrivacyPolicyImage.setImage(PrivacyImage);
-
+        NameTxt.setText(LoginController.LoggedinConsumer.getName());
+        EmailTxt.setText(LoginController.LoggedinConsumer.getEmailid());
+        PhoneTxt.setText(Integer.toString(LoginController.LoggedinConsumer.getPhoneno()));
     }
     public  void setSaveChangesBtnOnAction(ActionEvent event)throws Exception
     {
@@ -89,7 +91,7 @@ public class MyAccountController implements Initializable {
         String DOB = DOBTxt.getText();
         String phone = PhoneTxt.getText();
         String Email = EmailTxt.getText();
-        String registerUser = "update consumer set (" + ThreadLocalRandom.current().nextInt() + ",'" + name + "'," + DOB + ",'" +"'," + phone + ",'" + Email + "')"+ " where CID=+";
+        String registerUser = "update consumer set (" + ThreadLocalRandom.current().nextInt() + ",'" + name + "'," + DOB + ",'" +"'," + phone + ",'" + Email + "')"+ " where CID= "+LoginController.LoggedinConsumer.getCid();
         if(name.isBlank() != true || DOB.isBlank() !=true|| phone.isBlank() !=true||Email.isBlank() !=true)
         {
             try {

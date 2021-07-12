@@ -34,6 +34,7 @@ public class LoginController implements Initializable {
     @FXML
     private TextField UserNameTxt, PassTxt;
 
+    public static Consumer LoggedinConsumer = new Consumer();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         File branding = new File("images/attachment_101759249.png");
@@ -68,16 +69,25 @@ public class LoginController implements Initializable {
     public boolean validateLogin() {
 
         String verifyLogin = "SELECT count(1) from consumer where emailid = '"+UserNameTxt.getText() + "' AND password = '" + PassTxt.getText() + "'";
+        String getdeatils = "Select * from consumer where emailid='"+UserNameTxt.getText()+"' and password = '"+PassTxt.getText()+"'";
         try {
             DatabaseConnection con = new DatabaseConnection();
             Connection conDb = con.getConnection();
             Statement statement = conDb.createStatement();
+            Statement consumer = conDb.createStatement();
+            ResultSet Consumer = consumer.executeQuery(getdeatils);
+            Consumer.next();
             ResultSet query = statement.executeQuery(verifyLogin);
             while (query.next())
             {
                 if (query.getInt(1)==1)
                 {
                     MessageLbl.setText("Login SuccessFull");
+                    LoggedinConsumer.setCid(Consumer.getInt(1));
+                    LoggedinConsumer.setName(Consumer.getString(2));
+                    LoggedinConsumer.setPhoneno(Consumer.getInt(3));
+                    LoggedinConsumer.setEmailid(Consumer.getString(4));
+                    LoggedinConsumer.setPassword(Consumer.getString(5));
                     return true;
                 }
                 else {
