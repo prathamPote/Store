@@ -47,7 +47,7 @@
                      <children>
                         <ImageView fx:id="MyOrdersImage" fitHeight="27.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/MY%20ORDER.png" />
+                              <Image url="@../../images/MY ORDER.png" />
                            </image>
                            <rotationAxis>
                               <Point3D x="130.0" z="1.0" />
@@ -94,11 +94,11 @@
                <children>
                   <VBox prefHeight="52.0" prefWidth="286.0">
                      <children>
-                        <HBox fx:id="PrivacyPolicyImage" alignment="CENTER" prefHeight="0.0" prefWidth="286.0">
+                        <HBox fx:id="" alignment="CENTER" prefHeight="0.0" prefWidth="286.0">
                            <children>
-                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="PrivacyPolicyImage" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/download%20(1).png" />
+                                    <Image url="@../../images/download (1).png" />
                                  </image>
                               </ImageView>
                               <Label fx:id="PrivacyPolicyLabel" prefHeight="22.0" prefWidth="153.0" text=" Privacy Policy">

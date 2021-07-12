@@ -38,15 +38,19 @@ public class MyAccountController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         File ProfileImgFile = new File("images/Sample_User_Icon.png");
         Image ProfileImg = new Image(ProfileImgFile.toURI().toString());
-
+        ProfileImage.setImage(ProfileImg);
         File MyOrdersImgFile = new File("images/MY ORDER.png");
         Image MyOrdersImg = new Image(MyOrdersImgFile.toURI().toString());
-
+        MyOrdersImage.setImage(MyOrdersImg);
         File MyAccountImgFile = new File("images/accountincon.png");
         Image MyAccountImg = new Image(MyAccountImgFile.toURI().toString());
-
+        MyAccountImageView.setImage(MyAccountImg);
         File PasswordImgFile = new File("images/passwordicon.png");
         Image PasswordImg = new Image(PasswordImgFile.toURI().toString());
+        PasswordImage.setImage(PasswordImg);
+        File privacyfile = new File("images/download (1).png");
+        Image PrivacyImage = new Image(privacyfile.toURI().toString());
+        PrivacyPolicyImage.setImage(PrivacyImage);
 
     }
     public  void setSaveChangesBtnOnAction(ActionEvent event)throws Exception

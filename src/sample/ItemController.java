@@ -29,8 +29,6 @@ public class ItemController {
          this.selectListner=selectListner;
         NameLabel.setText(product.getName());
         PriceLabel.setText(Currency+ product.getPrice());
-        File imageFile = new File("images/ProductImages/iphone-12-blue-select-2020.png");
-        Image image = new Image(imageFile.toURI().toString());
-        ItemImage.setImage(image);
+        ItemImage.setImage(product.getImgsrc());
     }
 }

@@ -6,25 +6,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane onMousePressed="#click" prefHeight="195.0" prefWidth="231.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemController">
+<AnchorPane onMousePressed="#click" prefHeight="207.0" prefWidth="231.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemController">
    <children>
       <VBox alignment="CENTER" layoutX="7.0" layoutY="9.0" prefHeight="191.0" prefWidth="215.0" styleClass="shadow" stylesheets="@stylesheet.css">
          <children>
             <HBox alignment="CENTER" prefHeight="43.0" prefWidth="212.0">
                <children>
-                  <Label fx:id="NameLabel" alignment="CENTER" prefHeight="27.0" prefWidth="129.0" text="IPhone 12">
+                  <Label fx:id="NameLabel" prefHeight="27.0" prefWidth="135.0" text="IPhone 12">
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <Label fx:id="PriceLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="103.0" text=" Rs 1,20,200">
+                  <Label fx:id="PriceLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="84.0" text=" Rs 1,20,200">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
                </children>
             </HBox>
-            <ImageView fx:id="ItemImage" fitHeight="156.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ItemImage" fitHeight="161.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../images/ProductImages/iphone-12-blue-select-2020.png" />
+                  <Image url="@../../images/ProductImages/Mobile Phones/1.png" />
                </image></ImageView>
          </children>
       </VBox>
