@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterController">
+   <top>
+      <AnchorPane prefHeight="96.0" prefWidth="600.0" style="-fx-background-color: #4A1C40;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="UserImageView" cache="true" fitHeight="85.0" fitWidth="150.0" layoutX="22.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/download.png" />
+               </image></ImageView>
+            <Label layoutX="198.0" layoutY="31.0" text="User Registration" textFill="#f0d9d9">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="305.0" prefWidth="600.0" style="-fx-background-color: #F6E5E9;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="119.0" layoutY="50.0" text="Name">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label layoutX="111.0" layoutY="84.0" text="Email ID">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label layoutX="103.0" layoutY="125.0" prefHeight="19.0" prefWidth="65.0" text="Phone no">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label layoutX="84.0" layoutY="219.0" text="Confirm Password">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <TextField fx:id="NameTxt" layoutX="302.0" layoutY="47.0" style="-fx-background-radius: 20;" />
+            <TextField fx:id="EmailTxt" layoutX="302.0" layoutY="81.0" style="-fx-background-radius: 20;" />
+            <PasswordField fx:id="Pass2Txt" layoutX="300.0" layoutY="216.0" onInputMethodTextChanged="#checkPassOnAction" onKeyPressed="#checkPassOnAction" onKeyReleased="#checkPassOnAction" onKeyTyped="#checkPassOnAction" style="-fx-background-radius: 20;" />
+            <Label fx:id="passwordMsgLbl" alignment="CENTER" layoutX="261.0" layoutY="196.0" prefHeight="19.0" prefWidth="226.0" textFill="#e20909">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="108.0" layoutY="161.0" text="Password">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="Pass1Txt" layoutX="302.0" layoutY="158.0" style="-fx-background-radius: 20;" />
+            <Button fx:id="RegisterBtn" layoutX="223.0" layoutY="254.0" mnemonicParsing="false" onAction="#setRegisterBtnOnAction" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: #E798AE; -fx-background-radius: 30;" text="Register">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="LoginBtn" layoutX="376.0" layoutY="255.0" mnemonicParsing="false" onAction="#setLoginBtnOnAction" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: #E798AE; -fx-background-radius: 30;" text="Login">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="FinalMsgsLbl" alignment="CENTER" layoutX="145.0" layoutY="14.0" prefHeight="18.0" prefWidth="363.0" textFill="#f20808" />
+            <TextField fx:id="PhoneTxt" layoutX="300.0" layoutY="122.0" style="-fx-background-radius: 20;" />
+         </children></AnchorPane>
+   </bottom>
+</BorderPane>
