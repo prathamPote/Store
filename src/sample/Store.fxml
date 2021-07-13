@@ -24,8 +24,8 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="64.0" prefWidth="387.0" stylesheets="@stylesheet.css">
                      <children>
-                        <TextField prefHeight="26.0" prefWidth="194.0" promptText="Type here to search" styleClass="transparent" stylesheets="@stylesheet.css" />
-                        <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="101.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Search" textFill="WHITE">
+                        <TextField fx:id="SearchTxtField" prefHeight="26.0" prefWidth="194.0" promptText="Type here to search" styleClass="transparent" stylesheets="@stylesheet.css" />
+                        <Button fx:id="SearchBtn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#SetSearchBtnOnAction" prefHeight="30.0" prefWidth="101.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Search" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -42,12 +42,12 @@
                         <Insets bottom="40.0" left="20.0" right="20.0" />
                      </VBox.margin>
                      <children>
-                        <Label fx:id="SelectedItemName" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="381.0" text="IPhone 12" textFill="#393030">
+                        <Label fx:id="SelectedItemName" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="381.0" text="product name" textFill="#393030">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="SelectedItemPrice" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="157.0" layoutY="10.0" prefHeight="18.0" prefWidth="369.0" text="Rs 1,20,000" textFill="#3e3939">
+                        <Label fx:id="SelectedItemPrice" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="157.0" layoutY="10.0" prefHeight="18.0" prefWidth="369.0" text="product price" textFill="#3e3939">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -55,7 +55,7 @@
                         <Separator prefWidth="200.0" />
                         <ImageView fx:id="SelectedItemImage" fitHeight="232.0" fitWidth="205.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../images/ProductImages/iphone-12-blue-select-2020.png" />
+                              <Image url="@../../images/ProductImages/Mobile Phones/1.png" />
                            </image>
                            <VBox.margin>
                               <Insets left="80.0" top="20.0" />
@@ -72,7 +72,7 @@
                                        </font>
                                     </Label>
                                     <Separator opacity="0.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="114.0" />
-                                    <ComboBox prefHeight="36.0" prefWidth="73.0" promptText="1" stylesheets="@stylesheet.css">
+                                    <ComboBox fx:id="QuantityComboBox" onAction="#SetQuantityOnAction" prefHeight="36.0" prefWidth="90.0" promptText="Quantity" stylesheets="@stylesheet.css">
                                        <styleClass>
                                           <String fx:value="comboBox" />
                                           <String fx:value="transparent" />
@@ -81,7 +81,7 @@
                               </HBox>
                               <HBox alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="346.0">
                                  <children>
-                                    <Button fx:id="AddToCartBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Add to cart" textFill="WHITE" />
+                                    <Button fx:id="AddToCartBtn" mnemonicParsing="false" onAction="#AddtoCartBtnOnAction" prefHeight="39.0" prefWidth="175.0" styleClass="search-button" stylesheets="@stylesheet.css" text="Add to cart" textFill="WHITE" />
                                  </children>
                               </HBox>
                            </children>
@@ -106,12 +106,12 @@
                            </font>
                         </Label>
                         <Pane prefHeight="78.0" prefWidth="512.0" />
-                        <ImageView fx:id="MyAccountImageView" blendMode="MULTIPLY" fitHeight="68.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="MyAccountImageView" blendMode="MULTIPLY" fitHeight="68.0" fitWidth="61.0" onMousePressed="#MyAccountOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/accountincon.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="CartImageView" fitHeight="76.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="CartImageView" fitHeight="76.0" fitWidth="95.0" onMouseClicked="#CartOnAction" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/cart.png" />
                            </image>

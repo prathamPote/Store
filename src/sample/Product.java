@@ -1,10 +1,32 @@
 package sample;
 
+import javafx.scene.image.Image;
+import java.io.File;
+
 public class Product
 {
     private String name;
     private String imgsrc;
     private double  price;
+
+    public String getProductid() {
+        return productid;
+    }
+
+    public void setProductid(String productid) {
+        this.productid = productid;
+    }
+
+    private String productid;
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    private int quantity;
 
     public String getName() {
         return name;
@@ -14,15 +36,17 @@ public class Product
         this.name = name;
     }
 
-    public String getImgsrc() {
-        return imgsrc;
+    public Image getImgsrc() {
+        File imgFile = new File(imgsrc);
+        Image img = new Image(imgFile.toURI().toString());
+        return img;
     }
 
     public void setImgsrc(String imgsrc) {
         this.imgsrc = imgsrc;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 

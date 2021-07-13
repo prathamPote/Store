@@ -1,0 +1,21 @@
+productid,productname ,productprice ,catid
+P0031,Dell XPS 13,154446,Cat002
+P0032,"Apple MacBook Pro (13-inch, M1)",177999,Cat002
+P0033,"Acer Swift 3 (2020, AMD Ryzen 7 4700U)",97999,Cat002
+P0034," Apple MacBook Pro (16-inch, 2019)",210999,Cat002
+P0035," Apple MacBook Air (M1, 2020)",89990,Cat002
+P0036,Dell XPS 13 2-in-1,150999,Cat002
+P0037,Acer Chromebook Spin 713,56999,Cat002
+P0038,Asus ZenBook 13 UX325EA,98990,Cat002
+P0039,HP Envy 13 (2021),105999,Cat002
+P0040,Lenovo ThinkBook 14s Yoga,135999,Cat002
+P0041,Asus ROG Zephyrus G15,159999,Cat002
+P0042,Samsung Galaxy Book Flex 15,124599,Cat002
+P0043,Dell XPS 15 (2020),90599,Cat002
+P0044,HP Spectre x360 14,210099,Cat002
+P0045,Lenovo ThinkPad X12 Detachable,78990,Cat002
+P0046,Alienware m17 R4,189990,Cat002
+P0047,Lenovo ThinkPad X1 Carbon (8th Gen),75895,Cat002
+P0048,Lenovo Chromebook Duet,45989,Cat002
+P0049,"Microsoft Surface Laptop 4 (15-inch, AMD",149000,Cat002
+P0050,Dell XPS 17,237000,Cat002

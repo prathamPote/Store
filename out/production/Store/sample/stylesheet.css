@@ -49,16 +49,3 @@
     -fx-background-color: #FFFFFF;
         -fx-background-radius: 30;
 }
-.add-remove-layout{
-    -fx-border-radius:50;
-    -fx-border-width:1;
-    -fx-border-color:#303030
-}
-.rect-round{
-    -fx-background-radius:15;
-}
-.card{
-    -fx-background-color:#fff;
-    -fx-background-radius:20;
-    
-}
