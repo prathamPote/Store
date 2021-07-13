@@ -26,7 +26,7 @@
             <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
             <VBox prefHeight="255.0" prefWidth="286.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="219.0" prefWidth="286.0">
+                  <HBox accessibleText="hi" alignment="CENTER" prefHeight="219.0" prefWidth="286.0">
                      <children>
                         <ImageView fx:id="ProfileImage" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -145,7 +145,7 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="NameTxt" prefHeight="26.0" prefWidth="315.0" />
+                        <TextField fx:id="NameTxt" accessibleText="er" prefHeight="26.0" prefWidth="315.0" promptText="Enter Your Name" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="35.0" prefWidth="442.0">
@@ -155,13 +155,8 @@
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="DOBTxt" prefHeight="30.0" prefWidth="315.0" />
+                        <TextField fx:id="DOBTxt" prefHeight="30.0" prefWidth="315.0" promptText="Enter Your Date Of Birth" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" />
                      </children></HBox>
-                  <Label fx:id="ProfileDetailsLabel1" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="442.0" text=" Profile Details">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
                </children>
             </VBox>
             <VBox fx:id="ProfileSettingsInfo" prefHeight="240.0" prefWidth="442.0">
@@ -170,7 +165,7 @@
                      <children>
                         <HBox prefHeight="0.0" prefWidth="442.0">
                            <children>
-                              <Label fx:id="ContactInfoLabel" prefHeight="18.0" prefWidth="147.0" text="Contact Info">
+                              <Label fx:id="ContactInfoLabel" prefHeight="182.0" prefWidth="147.0" text="Contact Info">
                                  <font>
                                     <Font name="System Bold" size="25.0" />
                                  </font>
@@ -181,27 +176,32 @@
                            <children>
                               <HBox prefHeight="28.0" prefWidth="365.0">
                                  <children>
-                                    <Label fx:id="PhoneLabel" prefHeight="151.0" prefWidth="134.0" text="Phone">
+                                    <Label fx:id="PhoneLabel" prefHeight="110.0" prefWidth="130.0" text="Phone">
                                        <font>
                                           <Font size="17.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="PhoneTxt" prefHeight="26.0" prefWidth="323.0" />
+                                    <TextField fx:id="PhoneTxt" prefHeight="146.0" prefWidth="315.0" promptText="Enter Your Phone" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" />
                                  </children></HBox>
                            </children>
                         </VBox>
                      </children>
                   </VBox>
-                  <HBox prefHeight="27.0" prefWidth="442.0">
+                  <HBox prefHeight="28.0" prefWidth="442.0">
                      <children>
-                        <Label fx:id="EmailLabel" prefHeight="18.0" prefWidth="136.0" text="Email">
+                        <Label fx:id="EmailLabel" prefHeight="299.0" prefWidth="129.0" text="Email">
                            <font>
                               <Font size="17.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="EmailTxt" prefHeight="27.0" prefWidth="321.0" />
+                        <TextField fx:id="EmailTxt" prefHeight="27.0" prefWidth="316.0" promptText="Enter Your E-Mail ID" style="-fx-background-radius: 20;" stylesheets="@stylesheet.css" />
                      </children>
                   </HBox>
+                  <Pane prefHeight="51.0" prefWidth="442.0">
+                     <children>
+                        <Label fx:id="FinalMsgsLbl" layoutX="51.0" layoutY="29.0" prefHeight="17.0" prefWidth="309.0" />
+                     </children>
+                  </Pane>
                </children>
             </VBox>
             <HBox alignment="BASELINE_CENTER" prefHeight="41.0" prefWidth="442.0">

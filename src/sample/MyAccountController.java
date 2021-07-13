@@ -27,7 +27,7 @@ public class MyAccountController implements Initializable {
     @FXML
     private ImageView ProfileImage,MyOrdersImage, MyAccountImageView, PasswordImage,PrivacyPolicyImage;
     @FXML
-    private Label ProfileLabel,MyOrdersLabel,PasswordLabel,PrivacyPolicyLabel,NameLabel,DateofBirthLabel,PhoneLabel,EmailLabel,ProfileSettingsLabel,ProfileDetailsLabel,ContactInfoLabel,FinalMsgsLbl;
+    private Label FinalMsgsLbl,ProfileLabel,MyOrdersLabel,PasswordLabel,PrivacyPolicyLabel,NameLabel,DateofBirthLabel,PhoneLabel,EmailLabel,ProfileSettingsLabel,ProfileDetailsLabel,ContactInfoLabel,FinalMsgsLbl;
     @FXML
     private Button EditProfileButton,SaveChangesButton;
     @FXML
