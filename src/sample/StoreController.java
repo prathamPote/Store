@@ -87,7 +87,12 @@ public class StoreController implements Initializable {
     }
     public void CartOnAction(MouseEvent event)throws Exception
     {
-        // Add cart interface
+        Stage StoreStage = new Stage();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Cart.fxml")));
+        StoreStage.setTitle("Electronic Fellows");
+        StoreStage.initStyle(StageStyle.UTILITY);
+        StoreStage.setScene(new Scene(root, 700, 600));
+        StoreStage.show();
     }
     int count1=0;
     public void SetSearchBtnOnAction(ActionEvent event)throws Exception

@@ -1,11 +1,25 @@
 package sample;
 
+import javafx.scene.image.Image;
+
+import java.io.File;
+
 public class CartProduct {
 
     String name;
     Double price;
     int Quantity;
-    String imgsrc;
+    String Productid;
+    String Imgsrc;
+
+    public String getProductid() {
+        return Productid;
+    }
+
+    public void setProductid(String productid) {
+        Productid = productid;
+    }
+
 
     public String getName() {
         return name;
@@ -31,11 +45,11 @@ public class CartProduct {
         Quantity = quantity;
     }
 
-    public String getImgsrc() {
-        return imgsrc;
+    public Image getImgsrc() {
+        File imgFile = new File(Imgsrc);
+        return new Image(imgFile.toURI().toString());
     }
-
     public void setImgsrc(String imgsrc) {
-        this.imgsrc = imgsrc;
+       Imgsrc= imgsrc;
     }
 }

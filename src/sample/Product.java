@@ -38,8 +38,7 @@ public class Product
 
     public Image getImgsrc() {
         File imgFile = new File(imgsrc);
-        Image img = new Image(imgFile.toURI().toString());
-        return img;
+        return new Image(imgFile.toURI().toString());
     }
 
     public void setImgsrc(String imgsrc) {
