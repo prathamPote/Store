@@ -88,6 +88,7 @@ public class LoginController implements Initializable {
                     LoggedinConsumer.setPhoneno(Consumer.getInt(3));
                     LoggedinConsumer.setEmailid(Consumer.getString(4));
                     LoggedinConsumer.setPassword(Consumer.getString(5));
+                    LoggedinConsumer.setDOB(Consumer.getDate(6).toString());
                     return true;
                 }
                 else {

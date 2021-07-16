@@ -56,6 +56,7 @@ public class MyAccountController implements Initializable {
         NameTxt.setText(LoginController.LoggedinConsumer.getName());
         EmailTxt.setText(LoginController.LoggedinConsumer.getEmailid());
         PhoneTxt.setText(Integer.toString(LoginController.LoggedinConsumer.getPhoneno()));
+        DOBTxt.setText(LoginController.LoggedinConsumer.getDOB());
     }
     public  void setSaveChangesBtnOnAction(ActionEvent event)throws Exception
     {
@@ -114,8 +115,9 @@ public class MyAccountController implements Initializable {
         Stage registerStage = new Stage();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MyOrders.fxml")));
         registerStage.setTitle("Electronic Fellows");
-        registerStage.initStyle(StageStyle.TRANSPARENT);
-        registerStage.setScene(new Scene(root, 720, 600));
+        registerStage.initStyle(StageStyle.UNIFIED);
+        registerStage.setResizable(false);
+        registerStage.setScene(new Scene(root, 995, 616));
         registerStage.show();
     }
 }

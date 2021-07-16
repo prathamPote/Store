@@ -7,23 +7,26 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
 import javafx.scene.control.*;
-import javafx.scene.effect.Effect;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 public class CartController implements Initializable {
 
     public static List<CartProduct> Cartproducts1 = new ArrayList<>();
+    public static  List<CartProduct> Cartprodcutsfinal = new ArrayList<>();
+    public  List<CartProduct> Cartproducts2 = new ArrayList<>();
     @FXML
     private BorderPane borderpane;
     @FXML
@@ -41,6 +44,7 @@ public class CartController implements Initializable {
     private RemoveListner removeListner;
     @FXML private Label TotalPriceLbl;
 
+    public int orderid= ThreadLocalRandom.current().nextInt(1,100);
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Cartproducts1.addAll(getData());
@@ -59,7 +63,6 @@ public class CartController implements Initializable {
                 removeListner = new RemoveListner() {
                     @Override
                     public void OnRemoveListner(CartProduct product,AnchorPane anchorPane1)throws Exception {
-                        System.out.println(product.getName());
                         gridpane.getChildren().remove(anchorPane1);
                         DatabaseConnection con = new DatabaseConnection();
                         Connection conDb = con.getConnection();
@@ -74,15 +77,12 @@ public class CartController implements Initializable {
                     column = 0;
                     row++;
                 }
-                System.out.println(cartProduct.getName());
                 gridpane.add(anchorPane, column++, row);
                 GridPane.setValignment(anchorPane, VPos.CENTER);
                 GridPane.setMargin(anchorPane, new Insets(10.0f, 10.0f, 10.0f, 10.0f));
             }
+            Cartproducts2.addAll(Cartproducts1);
             Cartproducts1.clear();
-
-
-
         } catch (Exception exception) {
             exception.printStackTrace();
         }
@@ -110,18 +110,32 @@ public class CartController implements Initializable {
                 DatabaseConnection con = new DatabaseConnection();
                 Connection conDb = con.getConnection();
                 Statement statement = conDb.createStatement();
-                ResultSet query = statement.executeQuery("truncate table cart");
-                statement.executeQuery("commit");
                 Statement myorders = conDb.createStatement();
-                int orderid= ThreadLocalRandom.current().nextInt(1,100);
                 String orderstatus ="Order Confirmed";
                 int cid = LoginController.LoggedinConsumer.getCid();
-                String orderdate ="(select paymentdate from payments p1 where p1.cid ="+cid+")";
-                String paymentid ="(select paymentid from payments where cid ="+cid+")";
-                String address = "(select addressline from address where cid="+cid+")";
-                ResultSet rs = myorders.executeQuery("insert into orders values("+orderid+",'Order confirmed',(select current_date from dual),"+cid+",(select paymentid from payments where cid="+cid+"),(select addressline from address where cid="+cid+"))");
-                while (rs.next())
-                    myorders.executeQuery("commit");
+                ResultSet rs = myorders.executeQuery("insert into orders values("+orderid+",'Order confirmed',(select current_date from dual),"+cid+")");
+                myorders.executeQuery("commit");
+                statement.executeQuery("truncate table cart");
+                statement.executeQuery("commit");
+                PreparedStatement orders = conDb.prepareStatement("insert into orderedproducts values(?,?,?,?,?)");
+                Statement count = conDb.createStatement();
+                ResultSet countrs = count.executeQuery("Select count(*) from cart");
+                countrs.next();
+                Statement cart = conDb.createStatement();
+                ResultSet Cartitems = cart.executeQuery("Select * from cart");
+                Cartprodcutsfinal = Cartproducts2.stream().distinct().collect(Collectors.toList());
+                for (int i = 0; i< Cartprodcutsfinal.size(); i++)
+                {
+                    orders.setInt(1,orderid);
+                    orders.setString(2,Cartprodcutsfinal.get(i).getProductid());
+                    orders.setString(3,Cartprodcutsfinal.get(i).getName());
+                    orders.setFloat(4,Float.parseFloat(String.valueOf(Cartprodcutsfinal.get(i).getPrice())));
+                    orders.setInt(5,Cartprodcutsfinal.get(i).getQuantity());
+                    ResultSet resultSet = orders.executeQuery();
+                    resultSet.next();
+                    statement.executeQuery("commit");
+                }
+
             }
             else
             {
@@ -151,13 +165,11 @@ public class CartController implements Initializable {
             }
             while (Cart.next()) {
                 CartProduct product = new CartProduct();
-                System.out.println(Cart.getString(2));
                 product.setProductid(Cart.getString(1));
                 product.setName(Cart.getString(2));
                 product.setQuantity(Cart.getInt(3));
                 product.setPrice(Cart.getDouble(4));
                 int imgid = Integer.parseInt(Cart.getString("Productid").substring(3));
-                System.out.println(imgid);
                 product.setImgsrc("images/ProductImages/Mobile Phones/"+imgid+".png");
                 products.add(product);
             }

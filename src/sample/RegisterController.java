@@ -73,7 +73,7 @@ public class RegisterController implements Initializable
             String pass1 = Pass1Txt.getText();
             String pass2 = Pass2Txt.getText();
             if (pass1.compareTo(pass2) == 0) {
-                String registerUser = "Insert into consumer values (" + ThreadLocalRandom.current().nextInt(1,100) + ",'" + name + "'," + phone + ",'" + email + "','" + pass1 + "')";
+                String registerUser = "Insert into consumer values (" + ThreadLocalRandom.current().nextInt(1,100) + ",'" + name + "'," + phone + ",'" + email + "','" + pass1 + "',null)";
                 try {
                     DatabaseConnection con = new DatabaseConnection();
                     Connection conDb = con.getConnection();

@@ -6,31 +6,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<SplitPane dividerPositions="0.3411371237458194" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MyOrdersController">
+<SplitPane dividerPositions="0.3411371237458194" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MyOrdersController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="203.0">
          <children>
-            <VBox alignment="CENTER" layoutY="1.0" prefHeight="595.0" prefWidth="242.0" style="-fx-background-color: #F6E5E9;">
+            <VBox alignment="CENTER" layoutY="1.0" prefHeight="614.0" prefWidth="336.0" style="-fx-background-color: #F6E5E9;">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="232.0" stylesheets="@stylesheet.css" text="My Orders" textFill="#ba7575">
                      <font>
-                        <Font name="System Bold Italic" size="24.0" />
+                        <Font name="System Bold Italic" size="33.0" />
                      </font>
                      <styleClass>
-                        <String fx:value="free-delivery-card" />
+                        <String fx:value="transparent" />
                         <String fx:value="shadow" />
                      </styleClass></Label>
                   <Pane prefHeight="28.0" prefWidth="191.0" />
                   <Pane prefHeight="203.0" prefWidth="223.0">
                      <children>
-                        <VBox alignment="CENTER" layoutX="3.0" layoutY="2.0" prefHeight="203.0" prefWidth="242.0">
+                        <VBox alignment="CENTER" layoutX="3.0" layoutY="2.0" prefHeight="203.0" prefWidth="336.0">
                            <children>
                               <ImageView fx:id="MyOrdersImage" blendMode="MULTIPLY" fitHeight="139.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../images/MY ORDER.png" />
                                  </image></ImageView>
                               <Pane prefHeight="200.0" prefWidth="200.0" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="215.0" styleClass="free-delivery-card" stylesheets="@stylesheet.css" text="Hey Consumer!">
+                              <Label fx:id="WelcomeLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="215.0" styleClass="free-delivery-card" stylesheets="@stylesheet.css" text="Hey Consumer!">
                                  <font>
                                     <Font name="System Bold Italic" size="16.0" />
                                  </font>
@@ -40,29 +40,87 @@
                         </VBox>
                      </children>
                   </Pane>
-                  <Button fx:id="CloseBtn" alignment="CENTER" mnemonicParsing="false" onAction="#CloseBtnOnAction" prefHeight="51.0" prefWidth="177.0" styleClass="chosen-fruit-card" stylesheets="@stylesheet.css" text="Close">
+                  <Button fx:id="CloseBtn" alignment="CENTER" mnemonicParsing="false" onAction="#CloseBtnOnAction" prefHeight="51.0" prefWidth="177.0" stylesheets="@stylesheet.css" text="Close">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
-                     </font></Button>
+                     </font>
+                     <styleClass>
+                        <String fx:value="chosen-fruit-card" />
+                        <String fx:value="shadow" />
+                     </styleClass></Button>
+                  <Pane prefHeight="35.0" prefWidth="256.0" />
+                  <HBox prefHeight="49.0" prefWidth="256.0" stylesheets="@stylesheet.css">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="163.0" styleClass="shadow" stylesheets="@stylesheet.css" text="Select Your Order: " />
+                        <ComboBox fx:id="OrderComboBox" onAction="#ComboBoxOnAction" prefHeight="58.0" prefWidth="152.0" promptText="Orders" styleClass="comboBox" stylesheets="@stylesheet.css" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="chosen-fruit-card" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </HBox>
                </children>
             </VBox>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="602.0" prefWidth="432.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="651.0">
          <children>
-            <VBox alignment="BASELINE_CENTER" layoutX="4.0" layoutY="1.0" prefHeight="598.0" prefWidth="470.0">
+            <VBox alignment="BASELINE_CENTER" layoutX="4.0" layoutY="1.0" prefHeight="614.0" prefWidth="651.0">
                <children>
-                  <Pane prefHeight="47.0" prefWidth="470.0" />
+                  <Pane prefHeight="13.0" prefWidth="651.0" />
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="410.0" stylesheets="@stylesheet.css" text="Check your orders here " textFill="#ba7575">
                      <font>
-                        <Font name="System Bold Italic" size="24.0" />
+                        <Font name="System Bold Italic" size="28.0" />
                      </font>
                      <styleClass>
-                        <String fx:value="shopping-online-card" />
+                        <String fx:value="transparent" />
                         <String fx:value="shadow" />
                      </styleClass>
                   </Label>
-                  <Pane prefHeight="69.0" prefWidth="470.0" />
-                  <ScrollPane prefHeight="473.0" prefWidth="460.0" styleClass="transparent" stylesheets="@stylesheet.css" />
+                  <Pane prefHeight="96.0" prefWidth="502.0">
+                     <children>
+                        <HBox layoutX="1.0" layoutY="24.0" prefHeight="68.0" prefWidth="651.0">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="66.0" prefWidth="93.0" stylesheets="@stylesheet.css" text="Order Details:">
+                                 <styleClass>
+                                    <String fx:value="shopping-online-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Label>
+                              <Label fx:id="OrderIdLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="66.0" prefWidth="132.0" stylesheets="@stylesheet.css" text="Order ID">
+                                 <styleClass>
+                                    <String fx:value="free-delivery-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Label>
+                              <Label fx:id="OrderDateLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="142.0" stylesheets="@stylesheet.css" text="Order date">
+                                 <styleClass>
+                                    <String fx:value="shopping-online-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Label>
+                              <Label fx:id="OrderStatusLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="68.0" prefWidth="130.0" stylesheets="@stylesheet.css" text="Order Status">
+                                 <styleClass>
+                                    <String fx:value="free-delivery-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Label>
+                              <Label fx:id="OrderValueLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="161.0" layoutY="10.0" prefHeight="68.0" prefWidth="139.0" stylesheets="@stylesheet.css" text="Order Value">
+                                 <styleClass>
+                                    <String fx:value="shopping-online-card" />
+                                    <String fx:value="shadow" />
+                                 </styleClass></Label>
+                           </children>
+                        </HBox>
+                     </children></Pane>
+                  <Pane prefHeight="29.0" prefWidth="651.0" />
+                  <HBox prefHeight="415.0" prefWidth="651.0">
+                     <children>
+                        <ScrollPane prefHeight="398.0" prefWidth="646.0" styleClass="transparent" stylesheets="@stylesheet.css" HBox.hgrow="ALWAYS">
+                           <content>
+                              <GridPane fx:id="gridpane">
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children></HBox>
                </children>
             </VBox>
          </children></AnchorPane>

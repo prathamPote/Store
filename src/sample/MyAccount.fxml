@@ -22,7 +22,7 @@
                   </ImageView>
                </children>
             </VBox>
-            <Button fx:id="EditProfileButton" alignment="CENTER" mnemonicParsing="false" onAction="#setEditProfileBtnOnAction" prefHeight="26.0" prefWidth="295.0" style="-fx-background-color: F6C6EA;" styleClass="search-box" stylesheets="@stylesheet.css" text="Edit Profile" />
+            <Button fx:id="EditProfileButton" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#setEditProfileBtnOnAction" prefHeight="26.0" prefWidth="295.0" style="-fx-background-color: F6C6EA;" styleClass="search-box" stylesheets="@stylesheet.css" text="Edit Profile" />
             <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
             <VBox prefHeight="255.0" prefWidth="286.0">
                <children>

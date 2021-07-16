@@ -2,8 +2,17 @@ package sample;
 
 public class Consumer
 {
-    public String name,emailid;
+    public String name,emailid,DOB;
     private String password;
+
+    public String getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
+    }
+
     public int cid,phoneno;
 
     public String getName() {

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="150.0" prefWidth="378.0" style="-fx-background-radius: 400;" styleClass="rect-round" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Orderitemcontrolle">
+    <children>
+        <VBox alignment="CENTER_LEFT" layoutX="2.0" layoutY="4.0" prefHeight="152.0" prefWidth="388.0" style="-fx-background-color: #F6E5E9;" stylesheets="@stylesheet.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="4.0">
+            <children>
+                <Label fx:id="NameLbl" alignment="CENTER" prefHeight="38.0" prefWidth="386.0" text="IPhone 12">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                    </VBox.margin>
+                </Label>
+                <ImageView fx:id="CartItemImage" fitHeight="106.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/ProductImages/Mobile Phones/1.png" />
+                    </image>
+                </ImageView>
+            </children>
+            <styleClass>
+                <String fx:value="fruit-item" />
+                <String fx:value="shopping-online-card" />
+                <String fx:value="shadow" />
+            </styleClass>
+        </VBox>
+        <HBox layoutX="111.0" layoutY="60.0" prefHeight="34.0" prefWidth="104.0" stylesheets="@stylesheet.css" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="173.0">
+            <children>
+                <Label fx:id="QuantityLbl" alignment="CENTER" prefHeight="34.0" prefWidth="92.0" text="1">
+                    <HBox.margin>
+                        <Insets left="2.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+            <styleClass>
+                <String fx:value="add-remove-layout" />
+                <String fx:value="shadow" />
+                <String fx:value="shopping-online-card" />
+            </styleClass>
+        </HBox>
+        <Label fx:id="PriceLbl" alignment="CENTER" layoutX="257.0" layoutY="62.0" prefHeight="30.0" prefWidth="114.0" stylesheets="@stylesheet.css" text="Rs.120000" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="17.0">
+            <styleClass>
+                <String fx:value="free-delivery-card" />
+                <String fx:value="shadow" />
+            </styleClass></Label>
+    </children>
+</AnchorPane>
