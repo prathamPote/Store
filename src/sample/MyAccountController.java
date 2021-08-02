@@ -113,9 +113,11 @@ public class MyAccountController implements Initializable {
     public void OnOrdersAction(MouseEvent event)throws Exception
     {
         Stage registerStage = new Stage();
+        Stage current =(Stage) MyOrdersLabel.getScene().getWindow();
+        current.hide();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("MyOrders.fxml")));
         registerStage.setTitle("Electronic Fellows");
-        registerStage.initStyle(StageStyle.UNIFIED);
+        registerStage.initStyle(StageStyle.TRANSPARENT);
         registerStage.setResizable(false);
         registerStage.setScene(new Scene(root, 995, 616));
         registerStage.show();

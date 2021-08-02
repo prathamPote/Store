@@ -11,6 +11,7 @@ import javafx.geometry.VPos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -38,13 +39,18 @@ public class MyOrdersController implements Initializable
     private GridPane gridpane;
     @FXML
     private ComboBox OrderComboBox;
+    @FXML
+    private SplitPane splitpane;
 
     @Override
     public void initialize( URL url, ResourceBundle resourceBundle)
     {
+
         File MyOrdersImgFile = new File("images/MY ORDER.png");
         Image MyOrdersImg = new Image(MyOrdersImgFile.toURI().toString());
         MyOrdersImage.setImage(MyOrdersImg);
+        System.out.println(splitpane.toString());
+        splitpane.setVisible(true);
         OrderIdLbl.setVisible(false);OrderDateLbl.setVisible(false);OrderStatusLbl.setVisible(false);OrderValueLbl.setVisible(false);
         WelcomeLbl.setText("Hey "+LoginController.LoggedinConsumer.getName());
         try {

@@ -7,7 +7,7 @@ public class DatabaseConnection
     {
         try {
             Class.forName("oracle.jdbc.OracleDriver");
-            dblink = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:","c##pratham","p3pratham");
+            dblink = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:","c##pratham","pratham");
         } catch (Exception e) {
             e.printStackTrace();
         }

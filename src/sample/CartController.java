@@ -186,7 +186,7 @@ public class CartController implements Initializable {
         String city = CityTxt.getText();
         String state = StateTxt.getText();
         String payment;
-        if (addressLine.isBlank()||pincode.isBlank()||city.isBlank()||state.isBlank())
+        if (addressLine.isEmpty()||pincode.isEmpty()||city.isEmpty()||state.isEmpty())
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Please fill all the fields");
