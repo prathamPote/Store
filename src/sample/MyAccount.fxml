@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="828.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MyAccountController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="828.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MyAccountController">
    <left>
       <VBox alignment="BASELINE_RIGHT" prefHeight="530.0" prefWidth="286.0" spacing="10.0" style="-fx-background-color: #F6E5E9;" stylesheets="@stylesheet.css" BorderPane.alignment="CENTER">
          <children>
@@ -71,7 +71,7 @@
                                     <Image url="@../../images/passwordicon.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="PasswordLabel" prefHeight="22.0" prefWidth="157.0" text=" Password">
+                              <Label fx:id="PasswordLabel" onMousePressed="#SetPasswordChange" prefHeight="22.0" prefWidth="157.0" text=" Password">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -101,7 +101,7 @@
                                     <Image url="@../../images/download (1).png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="PrivacyPolicyLabel" prefHeight="22.0" prefWidth="153.0" text=" Privacy Policy">
+                              <Label fx:id="PrivacyPolicyLabel" onMousePressed="#LogoutOnClick" prefHeight="22.0" prefWidth="153.0" text="Log out">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

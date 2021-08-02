@@ -51,7 +51,10 @@ public class StoreController implements Initializable {
     public List<Product> Products1 = new ArrayList<>();
     private SelectListner selectListner;
      Product ChosenProduct= new Product();
-
+     public ImageView Element()
+     {
+         return MyAccountImageView;
+     }
     public void AddtoCartBtnOnAction(ActionEvent event) throws Exception
     {
     DatabaseConnection con = new DatabaseConnection();

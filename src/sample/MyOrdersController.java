@@ -17,7 +17,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
@@ -125,6 +124,10 @@ public class MyOrdersController implements Initializable
             GridPane.setMargin(anchorPane, new Insets(10.0f, 10.0f, 10.0f, 10.0f));
         }
         products.clear();
+
+    }
+    public void printInvoice()
+    {
 
     }
 }

@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -20,6 +22,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -121,5 +124,33 @@ public class MyAccountController implements Initializable {
         registerStage.setResizable(false);
         registerStage.setScene(new Scene(root, 995, 616));
         registerStage.show();
+    }
+    public void SetPasswordChange(MouseEvent event)throws Exception
+    {
+        Stage registerStage = new Stage();
+        Stage current =(Stage) MyOrdersLabel.getScene().getWindow();
+        current.hide();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("password.fxml")));
+        registerStage.setTitle("Electronic Fellows");
+        registerStage.initStyle(StageStyle.UTILITY);
+        registerStage.setResizable(false);
+        registerStage.setScene(new Scene(root, 600, 400));
+        registerStage.show();
+
+    }
+    public void LogoutOnClick(MouseEvent event)throws Exception
+    {
+        Stage current =(Stage) PrivacyPolicyLabel.getScene().getWindow();
+        current.close();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Electronic Fellows");
+        alert.setContentText("Logout and exit?");
+        alert.initModality(Modality.APPLICATION_MODAL);
+        Optional<ButtonType> button=alert.showAndWait();
+        if(button.get()==ButtonType.OK)
+        {
+            Platform.exit();
+        }
+
     }
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -191,6 +192,7 @@ public class CartController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Please fill all the fields");
             alert.setTitle("Electronic Fellows");
+            alert.initModality(Modality.APPLICATION_MODAL);
             alert.show();
         }
         String UserAddress = "Insert into address values('"+addressLine+"','"+pincode+"','"+city+"','"+state+"',"+LoginController.LoggedinConsumer.getCid()+")";
@@ -206,6 +208,7 @@ public class CartController implements Initializable {
            Alert alert = new Alert(Alert.AlertType.INFORMATION);
            alert.setTitle("Electronic Fellows");
            alert.setContentText("Select payment option");
+           alert.initModality(Modality.APPLICATION_MODAL);
            alert.show();
            return false;
         }

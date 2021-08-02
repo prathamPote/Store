@@ -43,7 +43,7 @@ public class RegisterController implements Initializable
             String pass1 = Pass1Txt.getText();
             String pass2 = Pass2Txt.getText();
 
-            if (name.isBlank() == true || email.isBlank()==true|| phone.isBlank()==true||pass1.isBlank()==true|| pass2.isBlank()==true)
+            if (name.isEmpty() == true || email.isEmpty()==true|| phone.isEmpty()==true||pass1.isEmpty()==true|| pass2.isEmpty()==true)
             {
                 FinalMsgsLbl.setText("Please fill all the details");
             }
@@ -73,7 +73,7 @@ public class RegisterController implements Initializable
             String pass1 = Pass1Txt.getText();
             String pass2 = Pass2Txt.getText();
             if (pass1.compareTo(pass2) == 0) {
-                String registerUser = "Insert into consumer values (" + ThreadLocalRandom.current().nextInt(1,100) + ",'" + name + "'," + phone + ",'" + email + "','" + pass1 + "',null)";
+                String registerUser = "Insert into consumer values (" + ThreadLocalRandom.current().nextInt(1,100) + ",'" + name + "'," + phone + ",'" + email + "','" + pass1 + "')";
                 try {
                     DatabaseConnection con = new DatabaseConnection();
                     Connection conDb = con.getConnection();
